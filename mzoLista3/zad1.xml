@@ -1,0 +1,15 @@
+﻿<?xml version='1.0'?>
+<studenci>
+  <student>
+    <imie>Ivan</imie>
+    <nazwisko>Petrenko</nazwisko>
+  </student>
+  <student>
+    <imie>Vasyl</imie>
+    <nazwisko>Mykytiuk</nazwisko>
+  </student>
+  <student>
+    <imie>Jan</imie>
+    <nazwisko>Kowal</nazwisko>
+  </student>
+</studenci>

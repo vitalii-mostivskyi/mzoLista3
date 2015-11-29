@@ -1,5 +1,4 @@
-﻿using System.Configuration;
-using mzoLista3.Data;
+﻿using mzoLista3.Data;
 using mzoLista3.Enums;
 using mzoLista3.Interfaces;
 

@@ -5,6 +5,8 @@ namespace mzoLista3.Interfaces
 {
     internal interface IStudentsProvider
     {
-        List<Student> GetStudents(string path);
+        string Path { get; }
+
+        List<Student> GetStudents();
     }
 }

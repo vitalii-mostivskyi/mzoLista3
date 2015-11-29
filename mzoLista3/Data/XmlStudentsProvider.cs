@@ -3,14 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using mzoLista3.Models;
 using System.Xml.Linq;
+using System.Configuration;
 
 namespace mzoLista3.Data
 {
     internal class XmlStudentsProvider : IStudentsProvider
     {
-        public List<Student> GetStudents(string path)
+        private string path;
+
+        public string Path
         {
-            IEnumerable<XElement> studentsElements = XElement.Load(path).Elements("student");
+            get { return path; }
+        }
+
+        public XmlStudentsProvider()
+        {
+            path = ConfigurationManager.AppSettings["xmlFilePath"];
+        }
+
+        public List<Student> GetStudents()
+        {
+            IEnumerable<XElement> studentsElements = XElement.Load(Path).Elements("student");
 
             return studentsElements.Select(se =>
             {

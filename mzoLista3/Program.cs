@@ -2,6 +2,8 @@
 using System.IO;
 using System.Linq;
 using System.Configuration;
+using System.Xml.Linq;
+using System.Threading;
 
 namespace mzoLista3
 {
@@ -9,24 +11,29 @@ namespace mzoLista3
     {
         static void Main(string[] args)
         {
-            var csvFilePath = ConfigurationManager.AppSettings["csvFilePath"];
+            var xmlFilePath = ConfigurationManager.AppSettings["xmlFilePath"];
 
-            GetStudents(csvFilePath)
+            GetStudents(xmlFilePath)
                .ForEach(s => s.Print());
         }
 
         private static List<Student> GetStudents(string path)
         {
-            return File.ReadAllLines(path).Select(l =>
-            {
-                var parts = l.Split("><".ToCharArray());
+            IEnumerable<XElement> studentsElements = XElement.Load(path).Elements("student");
 
-                return new Student
+            return studentsElements.Select(se =>
+            {
+                if (se != null)
                 {
-                    Name = parts[1],
-                    Surname = parts[3],
-                };
-            }).ToList();
+                    return new Student
+                    {
+                        Name = se.Element("imie").Value,
+                        Surname = se.Element("nazwisko").Value,
+                    };
+                }
+
+                return null;
+            }).Where(s => s != null).ToList();
         }
     }
 }

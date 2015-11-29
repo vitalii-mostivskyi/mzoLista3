@@ -1,4 +1,5 @@
-﻿﻿<studenci>
+﻿<?xml version='1.0'?>
+<studenci>
   <student>
     <imie>Ivan</imie>
     <nazwisko>Petrenko</nazwisko>
@@ -6,10 +7,9 @@
   <student>
     <imie>Vasyl</imie>
     <nazwisko>Mykytiuk</nazwisko>
-  </student
+  </student>
   <student>
     <imie>Jan</imie>
-    <nazwisko>
-    </nazwisko>
+    <nazwisko>Kowal</nazwisko>
   </student>
 </studenci>

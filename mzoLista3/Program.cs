@@ -2,6 +2,9 @@
 using System.IO;
 using System.Linq;
 using System.Configuration;
+using mzoLista3.Models;
+using mzoLista3.Data;
+using System;
 
 namespace mzoLista3
 {
@@ -11,7 +14,7 @@ namespace mzoLista3
         {
             var csvFilePath = ConfigurationManager.AppSettings["csvFilePath"];
 
-            GetStudents(csvFilePath)
+            new CsvStudentsProvider().GetStudents(csvFilePath)
                .ForEach(s => s.Print());
         }
 

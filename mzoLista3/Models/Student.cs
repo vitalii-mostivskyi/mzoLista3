@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace mzoLista3
+namespace mzoLista3.Models
 {
     public class Student
     {

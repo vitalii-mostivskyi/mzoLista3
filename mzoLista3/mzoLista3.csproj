@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\CsvStudentsProvider.cs" />
+    <Compile Include="Data\StudentsProviderFactory.cs" />
     <Compile Include="Data\XmlStudentsProvider.cs" />
     <Compile Include="Enums\ReadMode.cs" />
     <Compile Include="Interfaces\IStudentsProvider.cs" />

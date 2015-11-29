@@ -30,19 +30,7 @@ namespace mzoLista3
                 }
             }
 
-            IStudentsProvider studentsProvider = null;
-
-            switch(mode)
-            {
-                case ReadMode.Csv:
-                    studentsProvider = new CsvStudentsProvider();
-                    break;
-
-                case ReadMode.Xml:
-                    studentsProvider = new XmlStudentsProvider();
-                    break;
-
-            }
+            IStudentsProvider studentsProvider = StudentsProviderFactory.Build(mode);
 
             studentsProvider.GetStudents()
                .ForEach(s => s.Print());

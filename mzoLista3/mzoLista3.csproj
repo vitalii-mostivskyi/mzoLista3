@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\CsvStudentsProvider.cs" />
+    <Compile Include="Data\XmlStudentsProvider.cs" />
     <Compile Include="Interfaces\IStudentsProvider.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -59,7 +60,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="zad1.xml" />
+    <None Include="zad1.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

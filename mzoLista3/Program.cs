@@ -7,9 +7,7 @@ namespace mzoLista3
     {
         static void Main(string[] args)
         {
-            var csvFilePath = ConfigurationManager.AppSettings["csvFilePath"];
-
-            new CsvStudentsProvider().GetStudents(csvFilePath)
+            new XmlStudentsProvider().GetStudents(ConfigurationManager.AppSettings["xmlFilePath"])
                .ForEach(s => s.Print());
         }
     }
